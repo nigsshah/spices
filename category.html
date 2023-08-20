@@ -107,137 +107,26 @@
    <!-- end header inner -->
    <!-- end header -->
    <!-- product  section -->
-   <!-- <div class="product">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="titlepage">
-                     <h2>Our Product</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_left0">
-                  <div class="product_box">
-                     <figure><img src="images/product1.jpg" alt="#"/></figure>
-                     <h3 class="black">vegetable</h3>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                  <div class="product_box">
-                     <figure><img src="images/product2.jpg" alt="#"/></figure>
-                     <h3 >weat</h3>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding_right0">
-                  <div class="product_box">
-                     <figure><img src="images/product3.jpg" alt="#"/></figure>
-                     <h3>fruit</h3>
-                  </div>
-               </div>
-               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 padding_left0">
-                  <div class="product_box">
-                     <figure><img src="images/product4.jpg" alt="#"/></figure>
-                     <h3>sunflowere</h3>
-                  </div>
-               </div>
-               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 padding_right0">
-                  <div class="product_box">
-                     <figure><img src="images/product5.jpg" alt="#"/></figure>
-                     <h3>Livestock</h3>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div> -->
 
-
-
-   <section class="product_section layout_padding">
-      <div class="container">
+   <section class="product_section">
+      <div class="container" id="category-header">
          <div class="row">
             <div class="col-md-12">
-               <div class="titlepage product-title">
-                  <h2>Our Product</h2>
+               <div class="titlepage">
+                  <h2 id="category-title"></h2>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="category-description">
+                  <h2 id="category-description"></h2>
                </div>
             </div>
          </div>
       </div>
       <div class="container-fluid">
-
          <div class="product_container">
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Pulses')">
-                  <img src="images\pulses.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-
-                        Pulses
-                     </h5>
-
-                  </div>
-               </a>
-            </div>
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Spices')">
-                  <img src="images\spices-new.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-
-                        Spices
-                     </h5>
-
-                  </div>
-               </a>
-            </div>
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Oil-seeds')">
-                  <img src="images\oil-seeds.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-
-                        Oil-seeds
-                     </h5>
-                  </div>
-               </a>
-            </div>
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Grains')">
-                  <img src="images\grains-new.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-
-                        Grains
-                     </h5>
-
-                  </div>
-               </a>
-            </div>
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Herbs')">
-                  <img src="images\herbs-new.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-
-                        Herbs
-                     </h5>
-
-                  </div>
-               </a>
-            </div>
-            <div class="box">
-               <a href="category.html" onclick="setCategory('Nuts')">
-                  <img src="images\nuts-new.jpg" alt="">
-                  <div class="link_box">
-                     <h5 style="color:white;">
-                        Nuts
-                     </h5>
-
-                  </div>
-               </a>
-            </div>
          </div>
       </div>
    </section>
@@ -318,11 +207,72 @@
    <!-- sidebar -->
    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
    <script src="js/custom.js"></script>
-   <!-- setting category value to be sent to category page-->
+   <!-- js for loading category -->
    <script>
-      function setCategory(categoryName) {
-         localStorage.setItem("category", categoryName);
+
+      let categories = [
+        {
+         "name": "Spices",
+         "description": "Asian Spices, specifically Indian Spices are famous all over the world. We at Kore Agro are one of the leading exporters of Spices across the globe. We export spices in grounded as well as whole form including Chili, Turmeric, Cumin, Fennel, Fenugreek, Coriander and many more..",
+         "banner": "images/spices/banner.jpg",
+         "images": "images/spices/1.jpg,images/spices/2.jpg,images/spices/3.jpg",
+         "names" : "Black Pepper,Ajwain Seeds,Cassia"
+        },
+        {
+         "name": "Seeds",
+         "description": "Asian Spices, specifically Indian Spices are famous all over the world. We at Kore Agro are one of the leading exporters of Spices across the globe. We export spices in grounded as well as whole form including Chili, Turmeric, Cumin, Fennel, Fenugreek, Coriander and many more..",
+         "banner": "images/spices/banner.jpg",
+         "images": "images/seeds/1.jpg,images/seeds/2.jpg,images/seeds/3.jpg",
+         "names" : "Mustard Seeds,Peanuts,Sesame Seeds"
+        }
+    ]
+
+      var setSubCategory = function(subCategory) {
+         return function(event) {
+            localStorage.setItem("subCategory", subCategory);
+         };
+      };
+
+      let categoryName = localStorage["category"];
+      generateCategories(categoryName);
+
+      function generateCategories(categoryName) {
+         document.getElementById("category-title").innerHTML = categoryName;
+
+         for (let i = 0; i < categories.length; i++) {
+            if (categories[i].name == categoryName) {
+               document.getElementById("category-description").innerHTML = categories[i].description;
+               let banner = document.getElementById("category-header");
+               banner.style.background.url = categories[i].banner;
+               let images = categories[i].images.split(",");
+               for (let j = 0; j < images.length; j++) {
+                  console.log(images[j])
+                  var container = document.createElement("div");
+                  container.className = "box";
+                  var link = document.createElement("a");
+                  link.setAttribute("href", "subcategory.html");
+                  var innerImg = document.createElement("img");
+                  innerImg.setAttribute("src", images[j]);
+                  innerImg.setAttribute("alt", "");
+                  link.appendChild(innerImg);                  
+                  var innerDiv = document.createElement("div");
+                  innerDiv.className = "link_box";
+                  var innerDivH5 = document.createElement("h5");
+                  innerDivH5.style.color = "white";
+                  var name = categories[i].names.split(",")[j]
+                  innerDivH5.innerHTML = name;
+                  innerDiv.appendChild(innerDivH5);
+                  link.appendChild(innerDiv);
+                  link.addEventListener('click', setSubCategory(name));
+                  container.appendChild(link);
+
+                  document.getElementsByClassName("product_container")[0].appendChild(container);
+               }
+            }
+         }
       }
+
+
    </script>
 </body>
 
