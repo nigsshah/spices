@@ -135,13 +135,13 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="product_container">
+            <div class="product_container padd_left padd_right">
             </div>
         </div>
     </section>
     <!-- end product  section -->
     <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-secondary-local text-light-local footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
@@ -167,10 +167,11 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-uppercase mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">Home</a>
-                    <a class="btn btn-link" href="">About</a>
-                    <a class="btn btn-link" href="">Product</a>
-                    <a class="btn btn-link" href="">Contact</a>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="about.html">About</a>
+                    <a class="btn btn-link" href="products.html">Product</a>
+                    <a class="btn btn-link" href="blog.html">Blog</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-uppercase mb-4">Newsletter</h4>
@@ -268,6 +269,7 @@
                         var innerImg = document.createElement("img");
                         innerImg.setAttribute("src", images[j]);
                         innerImg.setAttribute("alt", "");
+                        innerImg.className = "product_rounded";
                         link.appendChild(innerImg);
                         var innerDiv = document.createElement("div");
                         innerDiv.className = "link_box";

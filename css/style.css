@@ -439,13 +439,19 @@ ul.btn li:last-child {
 
 
 .header-child2 {
-     background-color: #00ff00 !important;
+     background-color: #348e38 !important;
      width: 15%;
      float: left;
      padding-top: 1.2%;
      padding-left: 3%;
+     color: #ddd;
 }
-
+.header-child2 a{
+     color: whitesmoke;     
+}
+.header-child2 a:hover{
+     color: white;
+}
 .header {
      width: 100%;
      padding: 1%;
@@ -778,7 +784,7 @@ ul.btn li:last-child {
      background-color: #0f4229;
      width: 100%;
      text-align: center;
-     opacity: 50%;
+     opacity: 70%;
  }
 
 /* .product_section .product_container .box .link_box {
@@ -811,6 +817,7 @@ ul.btn li:last-child {
      text-transform: uppercase;
      padding-top: 0.8%;
      opacity: 1 !important;
+     color:#FFFFFF;
      /* margin-bottom: 25px; */
 }
 
@@ -823,7 +830,7 @@ ul.btn li:last-child {
 }
 
 .product_section .product_container .box .link_box a:hover {
-     background-color: #ffffff;
+     background-color: green;
      color: #000000;
 }
 
@@ -1039,7 +1046,7 @@ ul.btn li:last-child {
      margin-bottom: 5px;
      padding: 0;
      text-align: left;
-     color: var(--light);
+     color: #2ba116;
      font-weight: normal;
      text-transform: capitalize;
      transition: .3s;
@@ -1054,8 +1061,9 @@ ul.btn li:last-child {
 }
 
 .footer .btn.btn-link:hover {
-     color: var(--primary);
+     color: #2ba116;
      letter-spacing: 1px;
+     text-transform: uppercase;
      box-shadow: none;
 }
 
@@ -1068,6 +1076,14 @@ ul.btn li:last-child {
      padding-top: 2%;
      margin-top: 1%;
      text-align: center;
+}
+
+.bg-secondary-local {
+     background-color: #c1e3b0 !important;
+ }
+
+.text-light-local {
+     color: #2ba116 !important;
 }
 
 /** end footer - common **/
