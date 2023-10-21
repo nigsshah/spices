@@ -612,6 +612,7 @@ ul.btn li:last-child {
 
 .choose-points li {
      list-style-type:square;
+     align:center;
 }
 
 .banner_main table {
