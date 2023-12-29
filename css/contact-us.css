@@ -1,7 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
+.main-logo {
+    z-index: 99;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: -0%;
+}
+
+.items {
+    /* width: 100% !important; */
+    padding-top: 4%;
+}
+
+.address-img-text {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #348e38;
+}
+
+.email {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #348e38;
+}
+
+.phone {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #348e38;
+}
+
+.box .text_centre {
+    text-align: center;
+}
+
 .card {
-    width: 380px;
+    width: 375px;
     border: none;
 }
 
@@ -14,16 +53,13 @@
 .form-control:focus {
     color: #495057 !important;
     background-color: #fff !important;
-    border-color: #f1db16 !important;
+    border-color: #348e38 !important;
     outline: 0 !important;
     box-shadow: none !important;
 }
 
 .form {
-
-    position: relative;
     margin-bottom: 25px;
-
 }
 
 .form textarea {
@@ -51,4 +87,9 @@
 .send {
     height: 46px;
     font-size: 14px;
+    background-color: #348e38;
+}
+
+.send:hover {
+    background-color: #65ef6c;
 }
