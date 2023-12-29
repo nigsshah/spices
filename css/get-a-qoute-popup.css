@@ -1,0 +1,41 @@
+.modal {
+    position: absolute;
+    background-color: #fff;
+    display: none;
+    z-index: 2048;
+}
+
+.popup-content { 
+    position: relative;
+    padding-left: 35%;
+}
+
+@media (max-width:600px) {
+    .popup-content { 
+        position: relative;
+        padding-left: 0;
+    }
+}
+
+.box-close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #fe0606;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.popup-form {
+    width: 375px;
+}
+
+.send {
+    height: 46px;
+    font-size: 14px;
+    background-color: #348e38;
+}
+
+.send:hover {
+    background-color: #65ef6c;
+}
