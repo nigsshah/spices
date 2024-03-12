@@ -873,27 +873,35 @@ ul.btn li:last-child {
      margin-top: -1%;
 }
 
-#subcategory-table {
+.subcategory-info-1 {
      width: 95%;
      margin-left: 2%;
 }
 
-#subcategory-table td,
-#subcategory-table th {
+.subcategory-info-2 {
+     margin-left: 2%;
+}
+
+.subcategory-table-1 {
+     width: 100%;
+}
+
+.subcategory-table td,
+.subcategory-table th {
      border: 1px solid #ddd;
      padding: 1%;
      text-align: center;
 }
 
-#subcategory-table td {
+.subcategory-table td {
      overflow-wrap: anywhere;
 }
 
-#subcategory-table thead tr:hover {
+.subcategory-table thead tr:hover {
      background: rgb(139, 245, 139);
 }
 
-#subcategory-table tr:hover {
+.subcategory-table tr:hover {
      background: rgb(240, 247, 240);
 }
 

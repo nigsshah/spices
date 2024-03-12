@@ -164,7 +164,41 @@
         </div>
     </section>
     <br>
-    <table id="subcategory-table">
+    <div id="subcat-uses" class="subcategory-info-1">
+        <h3>Uses</h3>
+        <p></p>
+        <br>
+    </div>
+    <div id="subcat-origin" class="subcategory-info-1">
+        <h3>Origin and Distrubution</h3>
+        <p></p>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-4 subcategory-info-2 subcategory-i-lang">
+            <h3>Indian Names</h3>
+            <table id="subcategory-i-lang-table" class="subcategory-table subcategory-table-1">
+                <thead>
+                    <th>Language</th>
+                    <th>Name</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br>
+        </div>
+        <div class="col-md-4 subcategory-info-2 subcategory-f-lang">
+            <h3>Foreign Names</h3>
+            <table id="subcategory-f-lang-table" class="subcategory-table subcategory-table-1">
+                <thead>
+                    <th>Language</th>
+                    <th>Name</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+    <table id="subcategory-info-table" class="subcategory-info-1 subcategory-table">
         <thead>
             <th>Varieties</th>
             <th>Specification</th>
@@ -314,8 +348,12 @@
         let subCategories = [
             {
                 "name": "Fenugreek Seeds",
-                "description": "Fenugreek also known as Methi is a native of South Eastern Europe and West Asia. Known for its medicinal properties. Kore agro international is the top suppliers and exporters of fenugreek seeds.",
+                "description": "Fenugreek seed is the ripe fruit of an annual herb. This robust herb has light green leaves, is 30-60 cm tall and produces slender, beaked pods, 10-15 cm long, each pod contains 10-20 small hard yellowish brown seeds, which are smooth and oblong, about 3mm long, each grooved across one corner, giving them a hooked appearance.",
                 "images": "images/spices/Fenugreek_seeds.jpg",
+                "uses": "Fenugreek is used both as a food and food additive as well as in medicines. Fresh tender pods, leaves and shoots are eaten as curried vegetable. As a spice, it flavors food. Powder of dried leaves is also used for garnishing and flavoring variety of food. Fenugreek extract is used as a flavoring agent of imitation maple syrup. It is one of the principle constituent of curry powder. The seeds are used in colic flatulence, dysentery, diarrhea, dyspepsia, chronic cough and enlargement of liver and spleen, rickets, gout and diabetes. It is also used as a carminative, tonic, and aphrodisiac. Fenugreek oil is used in the manufacture of hair tonics.",
+                "indian_name": "Hindi : Methe;Bengali : Methe;Gujarati : Methe;Kannada : Menthya;Malayalam : Ventayan, Uluva;Marathi : Methe",
+                "foreign_name": "Spanish : Alholva;French : Fenugrec;German : Bockshorklee;Swedish : Bockshornklee;Arabic : Hulba;Dutch : Fenegriek;Italian : Fieno Greco;Portuguese : Alforva;Russian : Pazhitnik;Japanese : Koroha;Chinese : K’u – Tou",
+                "origin_and_distribution": "Fenugreek is a native of South Eastern Europe and West Asia, now cultivated in India, Argentina, Egypt and Mediterranean countries (Southern France, Morocco and Lebanon). In India it is grown extensively in Rajasthan, Gujarat, Madhya Pradesh, Uttar Pradesh, Maharashtra and Punjab. It is a cold season crop and is fairly tolerant to frost and very low temperature. It is best suited to tracts of moderate to low rainfall and is sown in all types of soil but perform better in loam and clayey loam with proper drainage. It can also be grown on black cotton soils.",
                 "tableData": [
                     {
                         "varieties": "Whole Fenugreek Seeds",
@@ -845,11 +883,65 @@
                     innerImg.setAttribute("alt", "");
                     document.getElementsByClassName("box_text")[0].appendChild(innerImg);
 
-                    const tbody = document.getElementsByTagName("tbody");
-                    var rows = subCategories[i].tableData;
-                    if (rows.length == 0) {
-                        document.getElementById("subcategory-table").style.display = "none";
+                    var uses = subCategories[i].uses;
+                    if (uses == null || uses.length == 0) {
+                        document.getElementById("subcat-uses").style.display = "none";
                     } else {
+                        const subcatUses = document.getElementById("subcat-uses").children[1];
+                        subcatUses.innerHTML = uses;
+                    }
+
+                    var origin = subCategories[i].origin_and_distribution;
+                    if (origin == null || origin.length == 0) {
+                        document.getElementById("subcat-origin").style.display = "none";
+                    } else {
+                        const subcatUses = document.getElementById("subcat-origin").children[1];
+                        subcatUses.innerHTML = origin;
+                    }
+
+                    var rows = subCategories[i].indian_name;
+                    if (rows == null || rows.length == 0) {
+                        document.getElementsByClassName("subcategory-i-lang")[0].style.display = "none";
+                    } else {
+                        const tbody = document.getElementById("subcategory-i-lang-table").getElementsByTagName("tbody");
+                        var i_lang = rows.split(";");
+                        for (let i = 0; i < i_lang.length; i++) {
+                            var lang_data = i_lang[i].split(":");
+                            var tr = document.createElement("tr");
+                            var td1 = document.createElement("td")
+                            td1.innerHTML = lang_data[0].trim();
+                            var td2 = document.createElement("td")
+                            td2.innerHTML = lang_data[1].trim();
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tbody[0].appendChild(tr);
+                        }
+                    }
+
+                    rows = subCategories[i].foreign_name;
+                    if (rows == null || rows.length == 0) {
+                        document.getElementsByClassName("subcategory-f-lang")[0].style.display = "none";
+                    } else {
+                        const tbody = document.getElementById("subcategory-f-lang-table").getElementsByTagName("tbody");
+                        var i_lang = rows.split(";");
+                        for (let i = 0; i < i_lang.length; i++) {
+                            var lang_data = i_lang[i].split(":");
+                            var tr = document.createElement("tr");
+                            var td1 = document.createElement("td")
+                            td1.innerHTML = lang_data[0].trim();
+                            var td2 = document.createElement("td")
+                            td2.innerHTML = lang_data[1].trim();
+                            tr.appendChild(td1);
+                            tr.appendChild(td2);
+                            tbody[0].appendChild(tr);
+                        }
+                    }
+
+                    rows = subCategories[i].tableData;
+                    if (rows.length == 0) {
+                        document.getElementById("subcategory-info-table").style.display = "none";
+                    } else {
+                        const tbody = document.getElementById("subcategory-info-table").getElementsByTagName("tbody");
                         for (let j = 0; j < rows.length; j++) {
                             var variety = rows[j].varieties;
                             var specification = rows[j].specification;
