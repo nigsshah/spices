@@ -145,9 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="product_container padd_left padd_right">
-            </div>
+        <div class="prod_container container-fluid">
         </div>
     </section>
     <!-- end product  section -->
@@ -306,7 +304,7 @@
                 "description": "Asian Herbs, specifically Indian Herbs are famous all over the world. We at Kore Agro are one of the leading exporters of Herbs across the globe. We export Herbs in grounded as well as whole form including Senna, Bay leaf, Senna pods and many more..",
                 "banner": "images/spices/banner.jpg",
                 "images": "images/spices/Star_Anise.jpg,images/herbs/Senna_Pods.jpg,images/spices/Star_Anise.jpg,images/spices/Cassia.jpg,images/spices/Star_Anise.jpg",
-                "names": "Zeodary Roots,Sena,Basil Seeds,Cassia,Annato Seeds"
+                "names": "Zeodary Roots,Senna Leaves and Pods,Basil Seeds,Cassia Small and Big,Annato Seeds"
             },
             {
                 "name": "Grains",
@@ -334,7 +332,7 @@
                 "description": "We are exporting gourmet nuts like Cashew Nuts, Pistachio. With vacuum sealing capabilities, we ensure farm fresh nuts delivered to our customers. We understand what is involved in exporting, and can make the process simple for anyone looking to import our nuts.",
                 "banner": "images/spices/banner.jpg",
                 "images": "images/spices/Star_Anise.jpg,images/spices/Star_Anise.jpg,images/spices/Star_Anise.jpg",
-                "names": "Dessicated Coconut,Coconut Flakes,Copra"
+                "names": "Desiccated Coconut,Coconut Flakes,Copra"
             },
         ]
 
@@ -350,16 +348,17 @@
         function generateCategories(categoryName) {
             document.getElementById("category-title").innerHTML = categoryName;
 
+            var rowDiv;
             for (let i = 0; i < categories.length; i++) {
                 if (categories[i].name == categoryName) {
-                    document.getElementById("category-description").innerHTML = categories[i].description;
-                    let banner = document.getElementById("category-header");
-                    banner.style.background.url = categories[i].banner;
                     let images = categories[i].images.split(",");
                     for (let j = 0; j < images.length; j++) {
-                        console.log(images[j])
+                        if (j % 3 == 0) {
+                            rowDiv = document.createElement("div");
+                            rowDiv.className = "row padd_left padd_right";
+                        }
                         var container = document.createElement("div");
-                        container.className = "box";
+                        container.className = "prod_section col-md-4";
                         var link = document.createElement("a");
                         link.setAttribute("href", "subcategory.html");
                         var innerImg = document.createElement("img");
@@ -368,17 +367,22 @@
                         innerImg.className = "product_rounded";
                         link.appendChild(innerImg);
                         var innerDiv = document.createElement("div");
-                        innerDiv.className = "link_box";
+                        innerDiv.className = "text_centre";
+                        innerDiv.style.backgroundColor = "#0f4229";
                         var innerDivH5 = document.createElement("h5");
-                        innerDivH5.style.color = "white";
                         var name = categories[i].names.split(",")[j]
                         innerDivH5.innerHTML = name;
                         innerDiv.appendChild(innerDivH5);
                         link.appendChild(innerDiv);
                         link.addEventListener('click', setSubCategory(name));
                         container.appendChild(link);
-
-                        document.getElementsByClassName("product_container")[0].appendChild(container);
+                        if (j % 3 < 2) {
+                            rowDiv.appendChild(container);
+                        }
+                        if (j % 3 == 2 || j == images.length - 1) {
+                            rowDiv.appendChild(container);
+                            document.getElementsByClassName("prod_container")[0].appendChild(rowDiv);
+                        }
                     }
                 }
             }
