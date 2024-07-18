@@ -969,7 +969,8 @@ ul.btn li:last-child {
 .imagegroup {
      display: flex;
      width: 100%;
-     animation: travel 20s ease-in-out infinite;
+     /* animation: travel 20s ease-in-out infinite; */
+     animation: travel 20s linear infinite;
 }
 
 .imagegroup img {
